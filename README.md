@@ -1,24 +1,45 @@
-# Heat recovery and fouling in Python
+# Heat Recovery and Fouling in a Counterflow Heat Exchanger
 
-**Python for Chemical Engineering | Project 01** by Blessing Ukatu
+A Python model of a steady-state counterflow heat exchanger, built with the effectiveness–NTU method.
 
-![Heat duty versus cold-side flow](figures/01_heat_recovery.png)
+## Overview
 
-![Effect of fouling resistance on duty and outlet temperatures](figures/02_fouling.png)
+Heat exchangers recover energy between process streams. Fouling, the build-up of deposits on heat-transfer surfaces, adds thermal resistance and reduces how much heat an exchanger can transfer.
 
-An educational, steady-state counterflow heat-exchanger study; not plant data,
-equipment certification or a validated industrial design. No HYSYS or IDAES run is claimed.
+This project uses Python to answer two engineering questions:
+
+1. How does cold-side flow rate affect heat duty and outlet temperatures?
+2. How much heat-transfer performance is lost when a fouling resistance is added?
+
+The model calculates 2,601 operating scenarios (51 cold-side flows × 51 fouling resistances), checks the results against an independent LMTD solution, and produces the graphs below.
+
+**Tools:** Python, NumPy, SciPy, Matplotlib
+
+## Key results
+
+Reference case: cold-side flow of 1.5 kg/s, same inlet temperatures.
+
+| Result | Clean | Fouled (Rf = 0.001 m² K/W) |
+|---|---:|---:|
+| Overall U, W/(m² K) | 500.0 | 333.3 |
+| Effectiveness | 0.575 | 0.459 |
+| Heat duty, kW | 240.3 | 192.1 |
+| Hot outlet, °C | 65.4 | 76.4 |
+| Cold outlet, °C | 63.3 | 55.6 |
+
+In this model, the added fouling resistance reduces heat duty by **20.1%**. Inputs are illustrative assumptions chosen for learning, not plant measurements, so this figure applies only to this example.
+
+## Graphs
+
+![Heat duty versus cold-side flow](figures/01_heat_recovery.png?v=2)
+
+![Effect of fouling resistance on duty and outlet temperatures](figures/02_fouling.png?v=2)
 
 ## Run
 
 Install Python 3, then run `pip install -r requirements.txt` and `python model.py`.
 The script regenerates the CSV, two figures and results.json, and runs verification checks.
 Dependencies are unpinned; tested runtime versions are in environment.txt.
-
-## Engineering question
-
-At fixed inlet temperatures and exchanger area, how do cold-side flow and an
-additional thermal resistance affect heat duty and outlet temperatures?
 
 ## Assumed inputs (chosen for this educational example)
 
