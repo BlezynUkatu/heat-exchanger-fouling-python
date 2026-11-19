@@ -78,8 +78,7 @@ def main():
     axs[1].legend()
     fig.suptitle('FOULING: THE THERMAL PENALTY',fontsize=21,fontweight='bold',y=.96)
     fig.text(.08,.865,f"At Rf = 0.001 m² K/W: duty falls {summary['duty_reduction_percent']:.1f}% in this model",fontsize=16,color='#137e8b')
-    fig.text(.08,.035,'Illustrative simulation, not plant measurements • Cold flow 1.5 kg/s • Fixed inlet conditions\nCombined fouling resistance on the same area basis as U • Blessing Ukatu',fontsize=10,color='#425466')
-    fig.subplots_adjust(bottom=.18,top=.76,wspace=.32)
+    fig.subplots_adjust(bottom=.1,top=.76,wspace=.32)
     fig.savefig(ROOT/'figures/02_fouling.png',dpi=180);plt.close(fig)
     print(json.dumps(summary,indent=2))
 
