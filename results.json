@@ -1,0 +1,27 @@
+{
+  "clean": {
+    "rf_m2K_W": 0.0,
+    "cold_flow_kg_s": 1.5,
+    "U_W_m2K": 500.0,
+    "effectiveness": 0.5749490835322731,
+    "Q_kW": 240.3287169164902,
+    "hot_out_C": 65.37983706443404,
+    "cold_out_C": 63.32993890215155
+  },
+  "fouled": {
+    "rf_m2K_W": 0.001,
+    "cold_flow_kg_s": 1.5,
+    "U_W_m2K": 333.3333333333333,
+    "effectiveness": 0.4594557881815815,
+    "Q_kW": 192.05251945990105,
+    "hot_out_C": 76.35170012274976,
+    "cold_out_C": 55.6303858787721
+  },
+  "duty_reduction_percent": 20.087569257636506,
+  "validation": {
+    "independent_LMTD_cases": 9,
+    "max_duty_difference_kW": 2.842170943040401e-14,
+    "checks": "Energy balance, temperature bounds, zero area, equal capacity rates, fouling trend: passed"
+  },
+  "cases": 2601
+}
